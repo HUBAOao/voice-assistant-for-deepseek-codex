@@ -27,12 +27,19 @@ jobs:
             gh release upload "$TAG" app.apk pc.zip --clobber
             exit 0
           fi
-          NOTES="下载页（任何地方都能打开）：https://hubaoao.github.io/voice-assistant-for-deepseek-codex/
+          # 攒下来的改动写在 release-notes.txt 里（打包时生成的），有就用它当正文
+          if [ -f release-notes.txt ]; then
+            NOTES_FILE=release-notes.txt
+          else
+            NOTES_FILE=$(mktemp)
+            cat > "$NOTES_FILE" <<'EOF'
+          下载页（任何地方都能打开）：
+          https://hubaoao.github.io/voice-assistant-for-deepseek-codex/
 
           - app.apk：手机端（安卓）
           - pc.zip：电脑端（Windows，解压后双击 1-安装语音助手.cmd）
-
-          更新说明看下载页最下面那份列表。"
+          EOF
+          fi
           gh release create "$TAG" app.apk pc.zip \
             --title "语音助手 $TAG" \
-            --notes "$NOTES"
+            --notes-file "$NOTES_FILE"
