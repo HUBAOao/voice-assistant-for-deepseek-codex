@@ -1,0 +1,37 @@
+name: 自动发布 Release
+
+# 每次推上来一个 vX.Y 的标签，这个机器人就替我们建一个 Release，
+# 顺带把两个安装包挂上去 —— 这样仓库右边那栏 "Releases" 就有东西了，
+# 不需要用户点、也不需要 token（用的是仓库自己的 GITHUB_TOKEN）。
+on:
+  push:
+    tags:
+      - "v*"
+
+permissions:
+  contents: write
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: 建 Release 并挂上安装包
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          set -e
+          TAG="${GITHUB_REF_NAME}"
+          if gh release view "$TAG" >/dev/null 2>&1; then
+            echo "这个标签已经有 Release 了：$TAG"
+            exit 0
+          fi
+          NOTES="下载页（任何地方都能打开）：https://hubaoao.github.io/voice-assistant-for-deepseek-codex/
+
+          - app.apk：手机端（安卓）
+          - pc.zip：电脑端（Windows，解压后双击 1-安装语音助手.cmd）
+
+          更新说明看下载页最下面那份列表。"
+          gh release create "$TAG" app.apk pc.zip \
+            --title "语音助手 $TAG" \
+            --notes "$NOTES"
