@@ -23,7 +23,8 @@ jobs:
           set -e
           TAG="${GITHUB_REF_NAME}"
           if gh release view "$TAG" >/dev/null 2>&1; then
-            echo "这个标签已经有 Release 了：$TAG"
+            echo "这个标签已经有 Release 了，把附件刷新成最新的：$TAG"
+            gh release upload "$TAG" app.apk pc.zip --clobber
             exit 0
           fi
           NOTES="下载页（任何地方都能打开）：https://hubaoao.github.io/voice-assistant-for-deepseek-codex/
