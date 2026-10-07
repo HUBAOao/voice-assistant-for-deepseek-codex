@@ -1,0 +1,118 @@
+<!doctype html>
+<html lang="zh-CN"><head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>语音助手 · 下载</title>
+<style>
+  :root { --bg:#12121a; --panel:#1b1b23; --line:#33333d; --fg:#f2f2f5;
+           --dim:#9a9aa5; --accent:#3ddc84; }
+  * { box-sizing:border-box; }
+  body { margin:0; background:var(--bg); color:var(--fg);
+          font-family:-apple-system,"Microsoft YaHei UI","Segoe UI",sans-serif;
+          line-height:1.6; }
+  .wrap { max-width:820px; margin:0 auto; padding:28px 18px 60px; }
+  h1 { font-size:26px; margin:0 0 6px; }
+  .sub { color:var(--dim); font-size:14px; margin-bottom:22px; }
+  .cards { display:flex; gap:16px; flex-wrap:wrap; }
+  .stats { margin:2px 0 16px; color:var(--dim); font-size:13px; }
+  .stats b { color:var(--accent); font-size:15px; }
+  .card { flex:1 1 300px; background:var(--panel); border:1px solid var(--line);
+           border-radius:16px; padding:18px; }
+  .card h2 { margin:0 0 4px; font-size:19px; }
+  .card .meta { color:var(--dim); font-size:13px; margin-bottom:14px; }
+  .btn { display:block; text-align:center; text-decoration:none; font-weight:700;
+          padding:14px; border-radius:12px; background:var(--accent); color:#08130c;
+          font-size:16px; }
+  .btn.ghost { background:#2a2a34; color:var(--fg); }
+  .btn.off { background:#2a2a34; color:var(--dim); pointer-events:none; }
+  .tip { color:var(--dim); font-size:12.5px; margin-top:10px; }
+  .how { background:var(--panel); border:1px solid var(--line); border-radius:16px;
+          padding:16px 18px; margin-top:18px; }
+  .how ol { margin:6px 0 0 20px; padding:0; }
+  .how li { margin:4px 0; font-size:14px; }
+  .logs { display:flex; gap:16px; flex-wrap:wrap; margin-top:18px; }
+  .log { flex:1 1 320px; background:var(--panel); border:1px solid var(--line);
+          border-radius:16px; padding:16px 18px; }
+  .log h3 { margin:0 0 8px; font-size:15px; }
+  .log ul { list-style:none; margin:0; padding:0; }
+  .log li { display:flex; gap:10px; padding:6px 0;
+             border-bottom:1px dashed #2c2c36; font-size:13.5px; }
+  .log li:last-child { border-bottom:0; }
+  .log li b { color:var(--accent); flex:0 0 54px; font-weight:700; }
+  .log li span { color:#d6d6dd; }
+  .sig { display:block; margin-top:10px; font-size:11.5px; color:#6f6f7a; line-height:1.8; }
+  .sig b { color:#8a8a95; font-weight:600; }
+  .qr { text-align:center; margin:18px 0 0; }
+  .qr img { width:200px; height:200px; background:#fff; border-radius:12px; padding:8px; }
+  .qh { color:var(--dim); font-size:12.5px; margin-top:6px; }
+  footer { color:#6f6f7a; font-size:12px; margin-top:26px; text-align:center; }
+  code { background:#26262f; padding:1px 6px; border-radius:6px; }
+</style></head><body><div class="wrap">
+  <h1>语音助手 · 下载</h1>
+  <div class="sub">电脑端（Windows，解压双击就能装）和手机端（安卓 APP）。
+    两边版本分开算：电脑端 v1.133，手机端 v1.21（2026-10-08）。</div>
+  <div class="stats" id="statsline" style="display:none"></div>
+
+  <div class="cards">
+    <div class="card">
+      <h2>🖥 电脑端</h2>
+      <div class="meta">Windows 10/11 · v1.133 · 2.8 MB</div>
+      <a class="btn" href="pc.zip">
+        下载安装包（zip）</a>
+      <div class="tip">解压得到一个文件夹，双击里面的
+        <code>1-安装语音助手.cmd</code>，等它自己装完就行（第一次会装依赖，慢一点）。</div>
+    </div>
+    <div class="card">
+      <h2>📱 手机端</h2>
+      <div class="meta">安卓 7.0 以上 · v1.21 · 649 KB</div>
+      <a class="btn" href="app.apk">
+        下载安卓 APP（apk）</a>
+      <div class="tip">装完打开 APP，扫电脑上那个二维码就连上了（不用手敲地址）。
+        手机上打开的这一页，点上面的按钮就能直接下。</div>
+    </div>
+  </div>
+
+  <div class="how">
+    <h3 style="margin:0;font-size:15px">怎么用（三步）</h3>
+    <ol>
+      <li>电脑端：下载 → 解压 → 双击 <code>1-安装语音助手.cmd</code>，装好桌面上会有图标</li>
+      <li>手机端：下载 APK 装上，打开 APP 后点左上角「扫码」</li>
+      <li>电脑上点悬浮窗的「二维码」按钮，用手机照一下就连上了
+        （手机和电脑要连同一个 Wi-Fi）</li>
+    </ol>
+    
+  </div>
+
+  
+
+  <div class="logs">
+    <div class="log"><h3>电脑端最近的更新（v1.133）</h3><ul><li><b>v1.133</b><span>「发布到网站」这条链路做好了（你要求：网页弄到公网、并且以网站上的文件为准更新）：设置左下角多了个「发布到网站」——填一次你在 github.com（或 gitee.com）建的空仓库地址，点发布会弹一次 git 登录，登完就记住了；以后每次更新程序，打包时会自动重新生成整站并自动推上去，网站上的版本号、安装包、更新清单就都是最新的，不用你管。「检查更新」也改成：设置里填过网站网址就用公网那份 version.json 当标准（手机那边也读同一份），没填就退回本机那份。本地的下载页、桌面快捷方式这些先留着 —— 等网站通了你说一声，我再把它们删干净</span></li><li><b>v1.132</b><span>下载页加了下载量：有人真的把包下走（APK 或电脑端安装包）就 +1，显示在页面顶部「已经被下载 N 次（电脑端 X · 手机端 Y）」，电脑端设置左下角也有一行「下载 N 次」；数记在同目录的 download-stats.json 里（按天也分开记，搬家记得带上这个文件）。注意：只统计「网页由这台电脑发出去」的那种（局域网 / 你自己把程序接到托管后面）；离线单文件版没有服务器，做不了全局计数 —— 那一版页面上不显示这一行，免得给你看个假的 0</span></li><li><b>v1.131</b><span>下载页做成完全独立、不依赖你这台电脑的两份（你要「任何人在哪都能下」）：①「下载页-单文件.html」—— 两个安装包直接嵌在这一个 html 里，双击就能下，微信/QQ 当文件发给谁都行，不用建站、不用联网（缺点 4.5MB）；②「下载页」文件夹 —— 一个标准静态站（相对路径，不用改任何东西），拖到 Cloudflare Pages、Netlify Drop、GitHub Pages 任何一个免费托管，几秒就得到一个公网网址，谁都能开。文件夹里还附了《怎么让所有人都能下载.txt》一步步写着怎么传。对外那一版我把「http://电脑的IP:8765」这类局域网的话都去掉了 —— 别人看着不会莫名其妙</span></li><li><b>v1.130</b><span>更新改成以下载页为准：电脑端设置里多了「检查更新」（在版本号旁边），手机端那个「检查更新」也改成读同一份数据 —— 也就是下载页那个版本清单 /dl/version.json，里面写着电脑端/手机端各自的版本、包大小和最近几条改动。网页那边一刷新，两边的提示就跟着变，不用两边各记一套。电脑端查到新版会弹出改动说明，给「一键更新」（下载更新包、自动关掉重装、装完自己开回来）和「打开下载页」两个选择；要是你把下载页传到了公网，在设置里把「更新源」填成那个网址，不在同一个网也能收到提示</span></li><li><b>v1.129</b><span>手机里每条新消息有了出生动画：从一个小点慢慢长到它本来的大小（终点就是正常气泡，不铺满屏幕；过冲只留 2%，长句子也不会撑出边框）。设置里「气泡动画」关掉就不做，老手机嫌费电也能关</span></li><li><b>v1.128</b><span>把署名补全了（你要求的）：①手机 APP 的设置里多了一栏「关于 / 署名」—— 作者、联系方式、版权、还有「随便用、随便改、保留署名就行」那句；②下载页最底下一行小字署名，带版本号、作者、联系方式、版权和完整声明。两处都是跟电脑端「关于」同一个来源（都读 version.py 里那几个写死的常量），所以以后改署名只改一处、三边一起变；署名也不在 config.json 里，别人改设置抹不掉</span></li></ul></div>
+    <div class="log"><h3>手机端最近的更新（v1.21）</h3><ul><li><b>v1.21</b><span>把「一键更新」修好了，并在设置里加了一个常驻入口（你要的）：设置 →「更新」那一行，点「检查更新」就跟电脑上的手机端版本比一下，有新版按钮就变成「一键更新」—— 点一下 APP 自己把新版下载到本机、再拉起系统的安装界面，跟着点「更新」就完事，不用去浏览器、不用自己找文件。以前用不了是三个原因凑一块：①网页把相对地址丢给安卓，Uri.parse 根本打不开（所以点了没反应/说「打不开下载页」）；②就算地址对了，那也只是把浏览器叫起来，浏览器下载完并不会自动装；③安卓 8 以后装 APK 要先允许「安装未知应用」。现在三条都改了：地址补成完整的、APP 自己下载、没权限就先带你去开那个开关（开完回来自动继续下）。技术上是给 APP 塞了一个几十行的迷你 FileProvider（这个 APP 一直不带任何第三方依赖，所以不能用 androidx 那个）</span></li><li><b>v1.20</b><span>又按你说的两处：①壁纸透明度能调了：设置 → 壁纸 → 一条滑杆（5%~100%），拖着实时看效果，松手存手机上；壁纸单独一层，透明度不影响字和气泡；②左上角那个头像放大了一点（24 → 30 像素），看着更清楚</span></li><li><b>v1.19</b><span>按你说的：①输入框里那句带麦克风的提示去掉了（麦克风标志这下彻底干净了）；②加了「发图片」：＋ 菜单里点 🖼，从手机相册选（可多选），传上来会直接贴进电脑上的对话窗口让 AI 看图 —— 贴完接着打字问它就行；传上来的图片也存在电脑的「手机上传」文件夹里</span></li><li><b>v1.18</b><span>按你说的又收了收：①手机端的语音（🎤 按住说话）去掉了 —— 录音识别还是电脑那边的事，手机上打字或者点 ＋ 里的快捷指令就行；②手机端名字能改了（设置里「名字」，默认跟电脑上那个一样，从 /api/info 拿）；③右上角那句「说唤醒词」的小字去掉了，只在连不上时提示；④版本号挪进设置里了（手机端 / 电脑端并排一行），页面上不再显示；⑤每说一句下面多出的那行「ChatGPT：你说的那句」小字也去掉了 —— 手机只留你说的、它念的、和「回答完了」三种</span></li></ul></div>
+  </div>
+
+  <footer>版本号、包大小、更新日志都跟着程序里的版本记录走，有新版这一页就是新的。
+    <span class="sig">
+      <b>语音助手 v1.133</b> · 作者 <b>胡宝</b>
+      · 联系方式 18540361319 · © 2026 胡宝 · 保留所有权利<br>
+      本软件免费提供：可以随意使用、随意修改、随意转发；只保留署名和版权信息就行<br>本软件由 胡宝 制作，免费提供给大家。任何人可以自由使用、自由修改、自由再分发，不需要事先征求许可；唯一的要求是保留本署名与版权信息。
+    </span>
+  </footer>
+<script>
+// 下载量：能读到才算（在线那份才有服务器记数）。离线单文件读不到就整行不显示，
+// 免得给你看个假的 0。
+async function loadStats() {
+  const line = document.getElementById("statsline");
+  if (!line) return;
+  try {
+    const r = await fetch("stats.json", {cache: "no-store"});
+    const d = await r.json();
+    if (!d || !d.ok) return;
+    const total = d.total || 0;
+    line.innerHTML = "已经被下载 <b>" + total + "</b> 次"
+      + "（电脑端 " + (d.pc || 0) + " · 手机端 " + (d.phone || 0) + "）";
+    line.style.display = "block";
+  } catch (e) { /* 离线版：没有就算了 */ }
+}
+loadStats();
+</script>
+</div></body></html>
