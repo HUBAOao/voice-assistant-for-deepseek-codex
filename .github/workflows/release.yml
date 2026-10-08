@@ -52,3 +52,22 @@ jobs:
           gh release create "$TAG" app.apk pc.zip tailscale.apk \
             --title "语音助手 $TAG" \
             --notes-file "$NOTES_FILE"
+      - name: 把老 Release 删掉（只留最新这一个）
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          set -e
+          # 为什么必须删：老 Release 里挂着那时候的 app.apk / pc.zip ——
+          # 早期版本的手机 APP 里写死过开发机的地址和令牌，那些附件一直躺在
+          # Releases 里，等于把旧口令一直挂在公网上。只留最新一个，既清掉这些，
+          # 也免得下载列表越来越长。
+          KEEP="${GITHUB_REF_NAME}"
+          echo "保留：$KEEP"
+          gh release list --limit 100 --json tagName --jq '.[].tagName' | while read -r t; do
+            if [ "$t" != "$KEEP" ]; then
+              echo "删掉老版本：$t"
+              gh release delete "$t" --yes --cleanup-tag=false || true
+            fi
+          done
+          echo "剩下的："
+          gh release list --limit 20
