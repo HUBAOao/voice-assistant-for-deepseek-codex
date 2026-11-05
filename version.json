@@ -1,13 +1,17 @@
 {
   "ok": true,
-  "updated": "2026-11-01 02:44",
+  "updated": "2026-11-05 20:19",
   "pc": {
-    "version": "1.315",
-    "size": "41.1 MB",
-    "kb": 42105.7,
-    "url": "pc.zip",
-    "update_url": "update.zip",
+    "version": "1.316",
+    "size": "63.9 MB",
+    "kb": 65498.8,
+    "url": "https://github.com/HUBAOao/voice-assistant-for-deepseek-codex/releases/download/v1.316/pc.zip",
+    "update_url": "https://github.com/HUBAOao/voice-assistant-for-deepseek-codex/releases/download/v1.316/update.zip",
     "notes": [
+      {
+        "version": "1.316",
+        "text": "鳍舱电脑端 v1.316 单目录便携与插件舱：程序、模型、语音克隆、数据、缓存和日志可固定在同一个 FinDeck 目录；新增 DSH 与 Codex 插件适配，安装后可自动启动完整语音、视觉、桌宠和手机桥接。大肥鱼声线参考音频和默认音色随新版安装包保留，不上传聊天记录、手机文件或账号令牌。"
+      },
       {
         "version": "1.315",
         "text": "鳍舱电脑端 v1.315 识别模型按需加载：启动时不再把 Whisper 常驻显存；按住说话时先立即录音，同时由一个可重试的单例后台任务加载模型，松开后等待就绪再转写。录音、加载、转写或手机语音请求期间不触发卸载，最后一次使用结束后连续空闲 10 秒才释放模型与 CUDA 缓存；快速连续使用会复用同一模型。"
@@ -38,7 +42,7 @@
     "version": "1.233",
     "size": "14.6 MB",
     "kb": 14974.3,
-    "url": "app.apk",
+    "url": "https://github.com/HUBAOao/voice-assistant-for-deepseek-codex/releases/download/v1.316/app.apk",
     "update_url": "",
     "notes": [
       {
