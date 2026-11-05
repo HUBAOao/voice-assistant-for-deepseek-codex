@@ -1,10 +1,10 @@
 {
   "ok": true,
-  "updated": "2026-11-05 20:19",
+  "updated": "2026-11-05 20:33",
   "pc": {
     "version": "1.316",
-    "size": "63.9 MB",
-    "kb": 65498.8,
+    "size": "63.3 MB",
+    "kb": 64840.6,
     "url": "https://github.com/HUBAOao/voice-assistant-for-deepseek-codex/releases/download/v1.316/pc.zip",
     "update_url": "https://github.com/HUBAOao/voice-assistant-for-deepseek-codex/releases/download/v1.316/update.zip",
     "notes": [
